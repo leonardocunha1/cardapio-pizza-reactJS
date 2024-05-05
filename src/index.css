@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --aileen-1: #86A69D;
+    --aileen-2: #F2B263;
+    --aileen-3: #F2E8DF;
+    --aileen-4: #F2C6C2;
+    --aileen-5: #c26a6a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    font-size: 1.4rem;
+    background-color: #f2f2f2;
+
+}
+
+/* Área da Lista de pizzas */
+
+.pizza-area {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 5rem;
+}
+
+.pizzas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: .7rem;
+    width: 23rem;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: .9rem;
+}
+
+.pizzas img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+}
+
+.pizzas h3,
+.pizzas p {
+    text-align: center;
+}
+
+.pizzas-desc {
+    color: #707070;
+}
+
+.pizzas-price {
+    color: var(--aileen-2);
+    font-weight: 700;
+}
+
+.pizzas button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+    color: var(--aileen-3);
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: var(--aileen-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pizzas button:hover {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+}
+
+/* Botão add pizza */
+
+.btn-add-pizza {
+    padding: 1rem 1.5rem;
+    margin: 3rem 2rem;
+    color: var(--aileen-3);
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: var(--aileen-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-add-pizza:hover {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+}
+
+/* Overlay */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+
+/* Formulário add pizza */
+
+.form-add-pizza {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem auto;
+    padding: 2rem 3rem 2rem 3rem;
+    background-color: #e7e7e7;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.596);
+    border: 2px solid var(--aileen-1);
+    border-radius: .9rem;
+    width: 30rem;
+    z-index: 11;
+}
+
+.btn-form-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    color: var(--aileen-3);
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: var(--aileen-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn-form-close:hover {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+}
+
+.form-add-pizza h3 {
+    text-align: center;
+    color: var(--aileen-1);
+    font-weight: 700;
+    font-size: 4rem;
+    font-family: 'calistoga';
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-add-pizza label {
+    color: #4d4d4d;
+
+}
+
+.form-add-pizza input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 1px solid #c9c8c8;
+    background-color: #e7e7e7;
+    color: #464646;
+}
+
+.form-add-pizza input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--aileen-1);
+}
+
+.form-add-pizza p {
+    text-align: center;
+    color: #1b1b1b;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-form-add-pizza {
+    width: 100%;
+    padding: 1rem 1rem;
+    color: var(--aileen-3);
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: var(--aileen-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.form-add-pizza button:hover {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+}
+
+/* Modal pizza */
+
+.modal-pizza {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 2rem 3rem 2rem 3rem;
+    background-color: #e7e7e7;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.596);
+    border: 2px solid var(--aileen-1);
+    border-radius: .9rem;
+    width: 33rem;
+    z-index: 11;
+}
+
+.modal-pizza img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.modal-pizza h3 {
+    text-align: center;
+    color: #1b1b1b;
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: 'calistoga';
+    margin-top: 2.5rem;
+}
+
+.modal-pizza-sizes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.model-pizza-size {
+    padding: .6rem 1rem;
+    background-color: var(--aileen-1);
+    color: var(--aileen-3);
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.active-size {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+    font-weight: 700;
+}
+
+.modal-pizza-desc {
+    color: #1b1b1b;
+    line-height: 1.9;
+}
+
+.modal-pizza-area-qtd-adc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.quantity-controls {
+    width: 7rem;
+    background-color: var(--aileen-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.quantity-controls p {
+    color: var(--aileen-3);
+    /* font-weight: 700; */
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.quantity-controls button {
+    padding: .5rem 1rem;
+    background: none;
+    color: var(--aileen-3);
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-pizza-addcart-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-pizza-addcart-price p {
+    color: #1b1b1b;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+}
+
+.modal-pizza-addcart-price button {
+    padding: 1rem 1.5rem;
+    color: var(--aileen-3);
+    font-weight: 700;
+    font-size: 1.4rem;
+    background-color: var(--aileen-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: pulse 3s infinite;
+}
+
+.modal-pizza-addcart-price button:hover {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+    animation: pulse1 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 2px rgba(134, 166, 157, 0.685);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(250, 229, 113, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(250, 229, 113, 0);
+    }
+}
+
+@keyframes pulse1 {
+    0% {
+        box-shadow: 0 0 0 2px rgba(242, 178, 99, 0.699)
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(250, 229, 113, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(250, 229, 113, 0);
+    }
+}
+
+.main-area {
+    display: flex;
+}
+
+aside {
+    width: 0;
+    transition: all ease .5s;
+    overflow-x: hidden;
+}
+
+aside.show {
+    width: 30vw;
+}
+
+.cart-area {
+    background-color: #f2f2f2;
+    border-left: var(--aileen-1) 2px solid;
+    border-top: var(--aileen-1) 2px solid;
+    border-bottom: var(--aileen-1) 2px solid;
+    padding: 1rem 2rem;
+}
+
+
+.cart-area h2 {
+    text-align: center;
+    color: var(--aileen-5);
+    font-weight: 700;
+    font-size: 5rem;
+    font-family: 'calistoga';
+    margin: 2rem 0;
+    letter-spacing: .3rem;
+}
+
+.cart-area ul {
+    padding-bottom: 1rem;
+    margin-top: 3rem;
+    border-bottom: #a0a0a0 1px solid;
+}
+
+.cart-area li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.cart-item-left img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+
+.cart-item-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--aileen-1);
+    border-radius: .6rem;
+}
+
+.cart-item-right button {
+    padding: .5rem 1rem;
+    color: #1b1b1b;
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-area-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: #a0a0a0 1px solid;
+}
+
+.cart-area div:nth-child(3) {
+    margin-top: 1.5rem;
+}
+
+.sem-borda {
+    border: none;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+
+.btn-cart-finish {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    color: var(--aileen-3);
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: var(--aileen-1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: pulse 3s infinite;
+    margin-top: 3rem;
+}
+
+.btn-cart-finish:hover {
+    background-color: var(--aileen-2);
+    color: #1b1b1b;
+    animation: pulse1 1.5s infinite;
+}
+
+/* Para WebKit (Chrome, Safari, Edge) */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
